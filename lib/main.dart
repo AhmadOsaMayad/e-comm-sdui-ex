@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const SduiScreen(json: kGetDummyJson),
+      locale: const Locale('en'),
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
