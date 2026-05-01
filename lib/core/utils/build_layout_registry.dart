@@ -7,7 +7,7 @@ import 'package:e_comm_s_d_u_i_ex/layouts/build_product_card_builder.dart';
 import 'package:e_comm_s_d_u_i_ex/layouts/build_screen_builder.dart';
 import 'package:e_comm_s_d_u_i_ex/layouts/build_section_builder.dart';
 
-WidgetRegistry buildRegistry() {
+WidgetRegistry buildLayoutRegistry() {
   final registry = WidgetRegistry();
 
   registry.register(AppKeys.screen, buildScreenBuilder());

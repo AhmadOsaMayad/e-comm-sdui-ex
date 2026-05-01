@@ -60,6 +60,174 @@ const kGetDummyJson = {
   ],
 };
 
+const kGetDummySheetJson = {
+  "type": "form",
+  "version": 1,
+  "props": {"title": "Filter Products", "submitButtonLabel": "Apply Filters"},
+  "children": [
+    {
+      "type": "section",
+      "props": {"title": "Price Range"},
+      "children": [
+        {
+          "type": "slider",
+          "props": {
+            "field": "priceMin",
+            "label": "Min price",
+            "min": 0,
+            "max": 1000,
+            "step": 10,
+          },
+        },
+        {
+          "type": "slider",
+          "props": {
+            "field": "priceMax",
+            "label": "Max price",
+            "min": 0,
+            "max": 1000,
+            "step": 10,
+          },
+        },
+      ],
+    },
+    {
+      "type": "section",
+      "props": {"title": "Category"},
+      "children": [
+        {
+          "type": "toggle",
+          "props": {"field": "isMen", "label": "Men", "group": "category"},
+        },
+        {
+          "type": "toggle",
+          "props": {"field": "isWomen", "label": "Women", "group": "category"},
+        },
+      ],
+    },
+    {
+      "type": "section",
+      "props": {"title": "Color"},
+      "children": [
+        {
+          "type": "chip_group",
+          "props": {"field": "colors", "multiple": true},
+          "children": [
+            {
+              "type": "chip",
+              "props": {"value": "red", "label": "Red", "colorHex": "#FF0000"},
+            },
+            {
+              "type": "chip",
+              "props": {
+                "value": "blue",
+                "label": "Blue",
+                "colorHex": "#0000FF",
+              },
+            },
+            {
+              "type": "chip",
+              "props": {
+                "value": "green",
+                "label": "Green",
+                "colorHex": "#00FF00",
+              },
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
+// const getDummySheetJson = {
+//   "type": "form",
+//   "version": 1,
+//   "props": {"title": "Filter Products", "submitButtonLabel": "Apply Filters"},
+//   "children": [
+//     {
+//       "type": "section",
+//       "props": {"title": "Price Range"},
+//       "children": [
+//         {
+//           "type": "slider",
+//           "props": {
+//             "field": "priceMin",
+//             "label": "Min price",
+//             "min": 0,
+//             "max": 1000,
+//             "step": 10,
+//           },
+//         },
+//         {
+//           "type": "slider",
+//           "props": {
+//             "field": "priceMax",
+//             "label": "Max price",
+//             "min": 0,
+//             "max": 1000,
+//             "step": 10,
+//           },
+//         },
+//       ],
+//     },
+//     {
+//       "type": "section",
+//       "props": {"title": "Category"},
+//       "children": [
+//         {
+//           "type": "toggle",
+//           "props": {"field": "isMen", "label": "Men", "group": "category"},
+//         },
+//         {
+//           "type": "toggle",
+//           "props": {"field": "isWomen", "label": "Women", "group": "category"},
+//         },
+//       ],
+//     },
+//     {
+//       "type": "section",
+//       "props": {"title": "Color"},
+//       "children": [
+//         {
+//           "type": "chip_group",
+//           "props": {"field": "colors", "multiple": true},
+//           "children": [
+//             {
+//               "type": "chip",
+//               "props": {"value": "red", "label": "Red", "colorHex": "#FF0000"},
+//             },
+//             {
+//               "type": "chip",
+//               "props": {
+//                 "value": "blue",
+//                 "label": "Blue",
+//                 "colorHex": "#0000FF",
+//               },
+//             },
+//             {
+//               "type": "chip",
+//               "props": {
+//                 "value": "green",
+//                 "label": "Green",
+//                 "colorHex": "#00FF00",
+//               },
+//             },
+//           ],
+//         },
+//       ],
+//     },
+//     {
+//       "type": "button",
+//       "props": {
+//         "field": "submit",
+//         "label": "Apply Filters",
+//         "colorToken": "primary",
+//         "action": "SUBMIT_FILTERS",
+//       },
+//     },
+//   ],
+// };
+
 // const kGetDummyJson = {
 //   "type": "screen",
 //   "version": 1,

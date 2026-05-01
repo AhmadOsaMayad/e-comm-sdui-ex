@@ -1,7 +1,7 @@
 import 'package:e_comm_s_d_u_i_ex/core/constants/app_keys.dart';
+import 'package:e_comm_s_d_u_i_ex/core/helpers/get_token_type.dart';
 import 'package:e_comm_s_d_u_i_ex/core/helpers/widget_registry.dart';
 import 'package:e_comm_s_d_u_i_ex/extensions/node_prop.dart';
-import 'package:e_comm_s_d_u_i_ex/extensions/shop_theme.dart';
 import 'package:e_comm_s_d_u_i_ex/extensions/text_style_x.dart';
 import 'package:flutter/material.dart';
 
@@ -11,14 +11,7 @@ SduiWidgetBuilder buildProductCardBuilder() {
     final name = props.getProp(AppKeys.name);
     final price = props.getProp(AppKeys.price).toString();
     final tokenStr = props.getString(AppKeys.colorToken, AppKeys.primary);
-    final token = switch (tokenStr) {
-      AppKeys.primary => TokenType.primary,
-      AppKeys.secondary => TokenType.secondary,
-      AppKeys.success => TokenType.success,
-      AppKeys.error => TokenType.error,
-      AppKeys.background => TokenType.surface,
-      _ => TokenType.error,
-    };
+    final token = getTokenType(tokenStr);
 
     final color = context.resolve(token);
     final textStyle = context.body;

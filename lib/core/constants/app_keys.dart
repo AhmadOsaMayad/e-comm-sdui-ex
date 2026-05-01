@@ -49,4 +49,21 @@ abstract class AppKeys {
   static const scrollDirection = 'scrollDirection';
   static const horizontal = 'horizontal';
   static const vertical = 'vertical';
+  static const form = 'form';
+  static const slider = 'slider';
+  static const toggle = 'toggle';
+  static const chipGroup = 'chipGroup';
+  static const chip = 'chip';
+  static const value = 'value';
+  static const label = 'label';
+  static const colorHex = 'colorHex';
+  static const colors = 'colors';
+  static const select = 'select';
+  static const submit = 'submit';
+  static const submitButtonLabel = 'submitButtonLabel';
+  static const apply = 'Apply';
+  static const field = 'field';
+  static const min = 'min';
+  static const max = 'max';
+  static const step = 'step';
 }

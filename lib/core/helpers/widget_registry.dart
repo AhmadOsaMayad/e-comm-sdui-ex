@@ -16,5 +16,13 @@ class WidgetRegistry {
     _builders[type] = builder;
   }
 
+  // merge another registry
+  void merge(WidgetRegistry other) {
+    _builders.addAll(other._builders);
+  }
+
+  // useful for debugging
+  Set<String> get types => _builders.keys.toSet();
+
   SduiWidgetBuilder? operator [](String type) => _builders[type];
 }

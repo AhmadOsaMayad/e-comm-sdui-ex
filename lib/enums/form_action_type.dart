@@ -1,0 +1,1 @@
+enum FormActionType { update, submit }
