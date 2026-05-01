@@ -11,6 +11,20 @@ MapX getAllMap(double value) {
   };
 }
 
+MapX getOnlyMap({
+  double start = 0.0,
+  double end = 0.0,
+  double top = 0.0,
+  double bottom = 0.0,
+}) {
+  return {
+    AppKeys.left: start,
+    AppKeys.top: top,
+    AppKeys.right: end,
+    AppKeys.bottom: bottom,
+  };
+}
+
 extension EdgeInsetsX on MapX {
   EdgeInsetsGeometry? getEdgeInsets(String key, [dynamic fallBack = 0.0]) {
     var raw = (this[key] as dynamic) ?? fallBack;

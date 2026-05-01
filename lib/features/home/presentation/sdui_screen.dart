@@ -1,4 +1,4 @@
-import 'package:e_comm_s_d_u_i_ex/core/helpers/build_registry.dart';
+import 'package:e_comm_s_d_u_i_ex/core/utils/build_registry.dart';
 import 'package:e_comm_s_d_u_i_ex/core/helpers/widget_renderer.dart';
 import 'package:e_comm_s_d_u_i_ex/models/sdui_schema_model/sdui_schema.dart';
 import 'package:flutter/material.dart';

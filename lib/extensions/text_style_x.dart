@@ -1,8 +1,6 @@
 import 'package:e_comm_s_d_u_i_ex/extensions/shop_theme.dart';
 import 'package:flutter/material.dart';
 
-enum TokenType { primary, secondary, success, error, background, surface }
-
 extension TextStyleX on TextTheme {
   TextStyle get heading1 =>
       const TextStyle(fontSize: 24, fontWeight: FontWeight.bold);

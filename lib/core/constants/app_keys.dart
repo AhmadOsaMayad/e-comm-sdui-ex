@@ -41,4 +41,12 @@ abstract class AppKeys {
   static const radius = 'radius';
   static const secondary = 'secondary';
   static const colorToken = 'colorToken';
+  static const gap = 'gap';
+  static const columns = 'columns';
+  static const grid = 'grid';
+  static const success = 'success';
+  static const list = 'list';
+  static const scrollDirection = 'scrollDirection';
+  static const horizontal = 'horizontal';
+  static const vertical = 'vertical';
 }

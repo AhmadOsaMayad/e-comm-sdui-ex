@@ -1,4 +1,4 @@
-import 'package:e_comm_s_d_u_i_ex/core/helpers/get_dummy_json.dart';
+import 'package:e_comm_s_d_u_i_ex/core/utils/get_dummy_json.dart';
 import 'package:e_comm_s_d_u_i_ex/core/utils/build_app_theme.dart';
 import 'package:e_comm_s_d_u_i_ex/core/utils/build_dark_app_theme.dart';
 import 'package:e_comm_s_d_u_i_ex/features/home/presentation/sdui_screen.dart';
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       theme: buildAppTheme(),
       darkTheme: buildDarkAppTheme(),
       debugShowCheckedModeBanner: false,
