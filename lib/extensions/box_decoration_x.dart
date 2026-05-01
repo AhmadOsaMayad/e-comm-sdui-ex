@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 extension BoxDecorationX on MapX {
   BoxDecoration? toBoxDecoration(Color? defaultColor) {
     final color = getString(AppKeys.color).toColor() ?? defaultColor;
-    final radius = getDouble(AppKeys.radius);
+    final radius = getProp(AppKeys.radius);
     final borderColor = getString(AppKeys.borderColor).toColor();
     final borderWidth = getDouble(AppKeys.borderWidth, 1.0);
 
@@ -15,7 +15,6 @@ extension BoxDecorationX on MapX {
     return BoxDecoration(
       color: color,
       borderRadius: BorderRadius.circular(radius),
-      // borderRadius: radius != null ? BorderRadius.circular(radius) : null,
       border: borderColor != null
           ? Border.all(color: borderColor, width: borderWidth)
           : null,

@@ -9,6 +9,7 @@ const kGetDummyJson = {
         "headline": "Weekend Deals",
         "subtitle": "Up to 40% off",
         "ctaText": "Shop now",
+        "colorToken": "secondary",
       },
     },
     {

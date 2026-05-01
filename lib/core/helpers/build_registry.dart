@@ -1,8 +1,8 @@
 import 'package:e_comm_s_d_u_i_ex/core/constants/app_keys.dart';
 import 'package:e_comm_s_d_u_i_ex/core/helpers/widget_registry.dart';
-import 'package:e_comm_s_d_u_i_ex/extensions/color_x.dart';
 import 'package:e_comm_s_d_u_i_ex/extensions/edge_insets_x.dart';
 import 'package:e_comm_s_d_u_i_ex/extensions/node_prop.dart';
+import 'package:e_comm_s_d_u_i_ex/extensions/text_style_x.dart';
 import 'package:flutter/material.dart';
 
 WidgetRegistry buildRegistry() {
@@ -10,9 +10,8 @@ WidgetRegistry buildRegistry() {
 
   registry.register(AppKeys.screen, (node, context, renderer) {
     final props = node.props;
-    final title = props.getString(AppKeys.title);
-    final padding =
-        props.getEdgeInsets(AppKeys.padding) ?? const EdgeInsets.all(16);
+    final title = props.getProp(AppKeys.title);
+    final padding = props.getEdgeInsets(AppKeys.padding, getAllMap(16));
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: ListView(
@@ -24,14 +23,22 @@ WidgetRegistry buildRegistry() {
 
   registry.register(AppKeys.banner, (node, context, renderer) {
     final props = node.props;
-    final headline = props.getString(AppKeys.headline);
-    final subtitle = props.getString(AppKeys.subtitle);
-    final bgColor =
-        props.getString(AppKeys.bgColor).toColor() ?? Colors.orange.shade100;
-    final padding =
-        props.getEdgeInsets(AppKeys.padding) ?? const EdgeInsets.all(16);
-    final margin = props.getEdgeInsets(AppKeys.margin) ?? EdgeInsets.zero;
-
+    final textStyle = context.heading1;
+    final subTextStyle = context.caption;
+    final headline = props.getProp(AppKeys.headline);
+    final subtitle = props.getProp(AppKeys.subtitle);
+    final padding = props.getEdgeInsets(AppKeys.padding, getAllMap(16));
+    final margin = props.getEdgeInsets(AppKeys.margin, getAllMap(12));
+    final tokenStr = props.getString(AppKeys.colorToken, AppKeys.primary);
+    final token = switch (tokenStr) {
+      AppKeys.primary => TokenType.primary,
+      AppKeys.secondary => TokenType.secondary,
+      // AppKeys.success => TokenType.success,
+      AppKeys.error => TokenType.error,
+      AppKeys.background => TokenType.surface,
+      _ => TokenType.error,
+    };
+    final bgColor = context.resolve(token);
     return Container(
       padding: padding,
       margin: margin,
@@ -42,19 +49,16 @@ WidgetRegistry buildRegistry() {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            headline,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
+          Text(headline, style: textStyle.copyWith(color: Colors.white)),
           const SizedBox(height: 4),
-          Text(subtitle),
+          Text(subtitle, style: subTextStyle.copyWith(color: Colors.white)),
         ],
       ),
     );
   });
 
   registry.register(AppKeys.section, (node, context, renderer) {
-    final title = node.props.getString(AppKeys.title);
+    final title = node.props.getProp(AppKeys.title);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,8 +75,8 @@ WidgetRegistry buildRegistry() {
 
   registry.register(AppKeys.productCard, (node, context, renderer) {
     final props = node.props;
-    final name = props.getString(AppKeys.name);
-    final price = props.getString(AppKeys.price);
+    final name = props.getProp(AppKeys.name);
+    final price = props.getProp(AppKeys.price).toString();
 
     return Card(
       child: ListTile(
@@ -85,43 +89,3 @@ WidgetRegistry buildRegistry() {
 
   return registry;
 }
-
-
-
-
-
-
-
-
-
-
-
-// import 'package:e_comm_s_d_u_i_ex/core/helpers/widget_registry.dart';
-// import 'package:e_comm_s_d_u_i_ex/core/services/setup_registry.dart';
-// import 'package:flutter/material.dart';
-
-
-
-// Widget buildLayoutFromJson(Map<String, dynamic> json, BuildContext context) {
-//   final childrenJson = json["children"] as List? ?? [];
-// final registry = WidgetRegistry(); 
-//   final children = childrenJson
-
-//       .map((c) => buildLayoutFromJson(c, context))
-//       .toList();
-//   // For a screen-like root, wrap in Scaffold
-//   if (json["type"] == "screen") {
-//     final title = json["properties"]["title"] as String? ?? "";
-
-//     return Scaffold(
-//       appBar: AppBar(title: Text(title)),
-//       body: ListView(
-//         padding: const EdgeInsets.all(16),
-//         children: children,
-//       ),
-//     );
-//   }
-
-//   // Delegate to registry for other types
-//   return registry.buildFromJson(json, context); 
-//   }

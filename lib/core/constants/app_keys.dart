@@ -39,4 +39,6 @@ abstract class AppKeys {
   static const borderWidth = 'borderWidth';
   static const border = 'border';
   static const radius = 'radius';
+  static const secondary = 'secondary';
+  static const colorToken = 'colorToken';
 }

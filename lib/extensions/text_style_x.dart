@@ -1,7 +1,7 @@
 import 'package:e_comm_s_d_u_i_ex/extensions/shop_theme.dart';
 import 'package:flutter/material.dart';
 
-enum ColorToken { primary, secondary, success, error }
+enum TokenType { primary, secondary, success, error, background, surface }
 
 extension TextStyleX on TextTheme {
   TextStyle get heading1 =>
@@ -26,18 +26,21 @@ extension TextStyles on BuildContext {
   TextStyle get caption =>
       Theme.of(this).textTheme.bodySmall ?? const TextStyle();
 
-  // your own helper: map a JSON token to a semantic color
-  Color resolve(ColorToken token) {
+  Color resolve(TokenType token) {
     final theme = Theme.of(this).extension<ShopTheme>()!;
     switch (token) {
-      case ColorToken.primary:
+      case TokenType.primary:
         return theme.primary;
-      case ColorToken.secondary:
+      case TokenType.secondary:
         return theme.secondary;
-      case ColorToken.success:
+      case TokenType.success:
         return theme.success;
-      default:
+      case TokenType.error:
         return theme.error;
+      case TokenType.background:
+        return theme.background;
+      case TokenType.surface:
+        return theme.surface;
     }
   }
 }

@@ -1,3 +1,4 @@
+import 'package:e_comm_s_d_u_i_ex/core/constants/app_keys.dart';
 import 'package:flutter/material.dart';
 
 enum TokenType { primary, secondary, success, error, background, surface }
@@ -55,7 +56,5 @@ class ShopTheme extends ThemeExtension<ShopTheme> {
 
   @override
   String toString() =>
-      'ShopTheme(primary: $primary, secondary: $secondary, background: $background)';
+      'ShopTheme(${AppKeys.primary}: $primary, ${AppKeys.secondary}: $secondary, ${AppKeys.background}: $background)';
 }
-
-extension ShopTextStyle on BuildContext {}
