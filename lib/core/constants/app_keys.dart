@@ -15,4 +15,23 @@ abstract class AppKeys {
   static const name = 'name';
   static const price = 'price';
   static const imageUrl = 'imageUrl';
+  static const bgColor = 'backgroundColor';
+  static const padding = 'padding';
+  static const margin = 'margin';
+  static const left = 'left';
+  static const top = 'top';
+  static const right = 'right';
+  static const bottom = 'bottom';
+  static const primary = 'primary';
+  static const error = 'error';
+  static const background = 'background';
+  static const center = 'center';
+  static const topLeft = 'topLeft';
+  static const topRight = 'topRight';
+  static const bottomLeft = 'bottomLeft';
+  static const bottomRight = 'bottomRight';
+  static const topCenter = 'topCenter';
+  static const bottomCenter = 'bottomCenter';
+  static const centerLeft = 'centerLeft';
+  static const centerRight = 'centerRight';
 }

@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // theme: ThemeData(
+      //   //this is just to demonstrate theme
+      // ),
       debugShowCheckedModeBanner: false,
       home: const SduiScreen(json: kGetDummyJson),
       locale: const Locale('en'),
