@@ -34,4 +34,9 @@ abstract class AppKeys {
   static const bottomCenter = 'bottomCenter';
   static const centerLeft = 'centerLeft';
   static const centerRight = 'centerRight';
+  static const color = 'color';
+  static const borderColor = 'borderColor';
+  static const borderWidth = 'borderWidth';
+  static const border = 'border';
+  static const radius = 'radius';
 }

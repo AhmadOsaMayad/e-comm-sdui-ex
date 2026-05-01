@@ -26,8 +26,8 @@ WidgetRegistry buildRegistry() {
     final props = node.props;
     final headline = props.getString(AppKeys.headline);
     final subtitle = props.getString(AppKeys.subtitle);
-    final bgHex = props.getString(AppKeys.bgColor);
-    final bgColor = bgHex.toColor() ?? Colors.orange.shade100;
+    final bgColor =
+        props.getString(AppKeys.bgColor).toColor() ?? Colors.orange.shade100;
     final padding =
         props.getEdgeInsets(AppKeys.padding) ?? const EdgeInsets.all(16);
     final margin = props.getEdgeInsets(AppKeys.margin) ?? EdgeInsets.zero;

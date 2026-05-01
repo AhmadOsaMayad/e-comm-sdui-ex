@@ -1,4 +1,5 @@
 import 'package:e_comm_s_d_u_i_ex/core/helpers/get_dummy_json.dart';
+import 'package:e_comm_s_d_u_i_ex/extensions/theme_token.dart';
 import 'package:e_comm_s_d_u_i_ex/features/home/presentation/sdui_screen.dart';
 import 'package:e_comm_s_d_u_i_ex/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeData(
-      //   //this is just to demonstrate theme
-      // ),
+      theme: buildAppTheme(),
       debugShowCheckedModeBanner: false,
       home: const SduiScreen(json: kGetDummyJson),
       locale: const Locale('en'),
