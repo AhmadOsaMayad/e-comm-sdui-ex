@@ -52,7 +52,7 @@ abstract class AppKeys {
   static const form = 'form';
   static const slider = 'slider';
   static const toggle = 'toggle';
-  static const chipGroup = 'chipGroup';
+  static const chipGroup = 'chip_group';
   static const chip = 'chip';
   static const value = 'value';
   static const label = 'label';
@@ -60,8 +60,11 @@ abstract class AppKeys {
   static const colors = 'colors';
   static const select = 'select';
   static const submit = 'submit';
+  static const reset = 'reset';
   static const submitButtonLabel = 'submitButtonLabel';
+  static const resetButtonLabel = 'resetButtonLabel';
   static const apply = 'Apply';
+  static const cancel = 'Cancel';
   static const field = 'field';
   static const min = 'min';
   static const max = 'max';

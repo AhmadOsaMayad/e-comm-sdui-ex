@@ -1,6 +1,6 @@
-import 'package:e_comm_s_d_u_i_ex/core/constants/app_keys.dart';
 import 'package:e_comm_s_d_u_i_ex/enums/form_action_type.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 @immutable
 class FormAction {
@@ -8,7 +8,7 @@ class FormAction {
   final String field;
   final dynamic value;
 
-  const FormAction(this.type, {required this.field, this.value});
+  const FormAction({required this.type, required this.field, this.value});
 
   @override
   bool operator ==(Object other) =>
@@ -23,6 +23,5 @@ class FormAction {
   int get hashCode => Object.hash(type, field, value);
 
   @override
-  String toString() =>
-      'FormAction($type, ${AppKeys.field}: $field, ${AppKeys.value}: $value)';
+  String toString() => 'FormAction(type: $type, field: $field, value: $value)';
 }

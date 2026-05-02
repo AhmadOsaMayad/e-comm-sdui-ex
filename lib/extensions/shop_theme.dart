@@ -1,8 +1,6 @@
 import 'package:e_comm_s_d_u_i_ex/core/constants/app_keys.dart';
 import 'package:flutter/material.dart';
 
-enum TokenType { primary, secondary, success, error, background, surface }
-
 @immutable
 class ShopTheme extends ThemeExtension<ShopTheme> {
   final Color primary;

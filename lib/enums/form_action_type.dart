@@ -1,1 +1,1 @@
-enum FormActionType { update, submit }
+enum FormActionType { update, submit, reset }

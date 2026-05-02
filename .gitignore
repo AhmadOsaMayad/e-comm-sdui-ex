@@ -46,3 +46,6 @@ app.*.map.json
 
 # Secret Notes
 secret_notes.dart
+
+# test file
+my_temp.dart

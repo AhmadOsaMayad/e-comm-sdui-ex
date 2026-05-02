@@ -63,7 +63,11 @@ const kGetDummyJson = {
 const kGetDummySheetJson = {
   "type": "form",
   "version": 1,
-  "props": {"title": "Filter Products", "submitButtonLabel": "Apply Filters"},
+  "props": {
+    "title": "Filter Products",
+    "submitButtonLabel": "Apply Filters",
+    "resetButtonLabel": "Reset",
+  },
   "children": [
     {
       "type": "section",
@@ -74,9 +78,9 @@ const kGetDummySheetJson = {
           "props": {
             "field": "priceMin",
             "label": "Min price",
-            "min": 0,
-            "max": 1000,
-            "step": 10,
+            "min": 0.0,
+            "max": 1000.0,
+            "step": 10.0,
           },
         },
         {
@@ -84,9 +88,9 @@ const kGetDummySheetJson = {
           "props": {
             "field": "priceMax",
             "label": "Max price",
-            "min": 0,
-            "max": 1000,
-            "step": 10,
+            "min": 0.0,
+            "max": 1000.0,
+            "step": 10.0,
           },
         },
       ],
